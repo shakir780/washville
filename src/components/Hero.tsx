@@ -5,7 +5,7 @@ import HeroBg3 from "../assets/HeroBg3.jpg";
 import SwiperCore from "swiper";
 import { Autoplay, Navigation, Pagination } from "swiper/modules";
 import { motion, useInView } from "framer-motion";
-import { useRef, useState } from "react";
+import { SetStateAction, useRef, useState } from "react";
 
 const Hero = () => {
   SwiperCore.use([Navigation, Pagination, Autoplay]);
@@ -13,7 +13,7 @@ const Hero = () => {
   const ref = useRef(null);
 
   const [currentSlide, setCurrentSlide] = useState(0);
-  const handleSlideChange = (swiper) => {
+  const handleSlideChange = (swiper: { realIndex: SetStateAction<number> }) => {
     setCurrentSlide(swiper.realIndex);
   };
   console.log(currentSlide);

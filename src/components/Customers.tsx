@@ -1,4 +1,4 @@
-import Image from "next/image";
+import Image, { StaticImageData } from "next/image";
 import React, { useEffect, useRef, useState } from "react";
 import Customer1 from "../assets/customer1.jpg";
 import Customer2 from "../assets/customer2.jpg";
@@ -61,7 +61,7 @@ const testimonials = [
   },
 ];
 interface TestimonialProps {
-  imageSrc: string;
+  imageSrc: StaticImageData;
   name: string;
   role: string;
   text: string;
